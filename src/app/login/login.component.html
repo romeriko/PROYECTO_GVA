@@ -1,0 +1,73 @@
+<div class="container margin-100t">
+  <div class="row">
+    <div class="section"></div>
+    <main>
+      <form [formGroup]="loginForm" (submit)="login($event)">
+        <div style="text-align: center;">
+          <div class="container">
+            <div class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row"
+                 style="display: inline-block; padding: 32px 48px 0 48px; border: 1px;">
+              <div class="section">
+                <h1 class="no-margin">GVA</h1>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input formControlName="username"
+                         autocomplete="nope"
+                         class="validate"
+                         type="text"
+                         name="username"
+                         id="email"
+                         required/>
+                  <label for="email">Username</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col m12">
+                  <input formControlName="password"
+                         class="validate"
+                         type="password"
+                         name="password"
+                         id="password"
+                         autocomplete="new-password"
+                         required/>
+                  <label for="password">Password</label>
+                </div>
+                <label style="float: right;">
+                  <a><b style="color: transparent;">Forgot Password?</b></a>
+                </label>
+              </div>
+              <br/>
+              <div style="text-align: center;">
+                <div class="row">
+                  <button style="margin-left:65px;"
+                          type="submit"
+                          class="col  s6 btn btn-small white black-text  waves-effect z-depth-1 y-depth-1">
+                    <div *ngIf="loading" class="preloader-wrapper button-icon active">
+                      <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                          <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+                    </div>
+                    Login
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <app-confirmation-code-modal *ngIf="session" [code]="session.code"
+                                   (codeInserted)="validCode()">
+      </app-confirmation-code-modal>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+
+.margin-100t {
+  margin-top: 100px !important;
+}
+
+.button-icon {
+  width: 1em !important;
+  height: 1em !important;
+  margin-left: -10px;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+.full-w {
+  width: 100% !important;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}
+
+.modal-100 {
+  max-width: 100%;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.modal-90 {
+  max-width: 90%;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.modal-80 {
+  max-width: 80%;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.modal-60 {
+  max-width: 60%;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.modal-50 {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  max-width: 50%;
+}
+
+.modal-30 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 30%;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.inline {
+  display: inline-flex !important;
+}
+
+.horizontal-margin {
+  margin: 0 5px;
+}
+
+.px12{
+  font-size: 12px!important;
+}
+
+.no-margin{
+  margin: 0!important;
+}
+.margin-left{
+  margin-left: 10px;
+}
+
+.nsm-content{
+  padding: 0!important;
+}

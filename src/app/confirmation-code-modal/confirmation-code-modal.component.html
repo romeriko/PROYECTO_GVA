@@ -1,0 +1,38 @@
+<ngx-smart-modal customClass="modal-20" identifier="code-insertion">
+  <div class="modal-content no-padding">
+    <ul class="collection no-margin">
+      <li class="collection-item">
+        <h5>Inserte código de verificación</h5>
+      </li>
+    </ul>
+    <form id="deviceUpdateForm" name="deviceUpdateForm" class="col s12" [formGroup]="codeForm">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="name" formControlName="code" type="number" class="validate">
+          <label [ngClass]="{'active': active}" for="name">Código</label>
+        </div>
+      </div>
+    </form>
+    <ul class="collection no-margin">
+      <li class="collection-item">
+        <button (click)="submit()"
+                type="submit" form="deviceUpdateForm" class="waves-effect waves-light white black-text darken-2 btn margin-left">
+          <div *ngIf="validating" class="preloader-wrapper button-icon active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+          Validar
+        </button>
+      </li>
+    </ul>
+  </div>
+</ngx-smart-modal>

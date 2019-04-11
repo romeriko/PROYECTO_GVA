@@ -1,0 +1,141 @@
+<app-main-layout title="Home"></app-main-layout>
+<main>
+  <div class="row">
+    <div class="col s6">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>Manejo de Dispositivos</b>
+          </div>
+        </div>
+
+        <div class="row">
+          <a href="/device/add">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">add_to_queue</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Agregar Dispositivo</h5>
+              </span>
+            </div>
+          </a>
+          <div class="col s1">&nbsp;</div>
+          <div class="col s1">&nbsp;</div>
+
+          <a routerLink="/devices">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">devices_other</i>
+              <span class="indigo-text text-lighten-1">
+                <h5> Mis Dispositivos</h5>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s6">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>Actualizaciones</b>
+          </div>
+        </div>
+        <div class="row">
+          <a routerLink="/updates">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">autorenew</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Listado</h5>
+              </span>
+            </div>
+          </a>
+
+          <div class="col s1">&nbsp;</div>
+          <div class="col s1">&nbsp;</div>
+
+          <a routerLink="/installations">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">update</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Instaladas</h5>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>Alertas</b>
+          </div>
+        </div>
+
+        <div class="row">
+          <a routerLink="/alerts/install">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">notification_important</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Actualizaciones e Instalaciones</h5>
+              </span>
+            </div>
+          </a>
+
+          <div class="col s1">&nbsp;</div>
+          <div class="col s1">&nbsp;</div>
+
+          <a routerLink="/alerts">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">error</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Historial de Notificaciones</h5>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s6">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>Otros</b>
+          </div>
+        </div>
+        <div class="row">
+          <a href="#!">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">playlist_add_check</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Otra Opcion</h5>
+              </span>
+            </div>
+          </a>
+          <div class="col s1">&nbsp;</div>
+          <div class="col s1">&nbsp;</div>
+          <a href="#!">
+            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+              <i class="indigo-text text-lighten-1 large material-icons">check_circle_outline</i>
+              <span class="indigo-text text-lighten-1">
+                <h5>Otra Opcion</h5>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
+    <a href="/device/add" class="btn-floating btn-large pink waves-effect waves-light">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
+</main>
+
+<app-footer [fixed]="false"></app-footer>

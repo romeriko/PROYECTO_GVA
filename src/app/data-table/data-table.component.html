@@ -1,0 +1,16 @@
+<table class="striped highlight">
+  <thead>
+  <tr>
+    <th *ngFor="let title of titles">{{title | uppercase}}</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let row of rows" (dblclick)="wasDoubleClicked(row)">
+    <td class="capitalize" *ngFor="let field of fields">
+      <span *ngIf="!links[field]">{{row[field] || '- - -'}}</span>
+      <a class="pointer" *ngIf="links[field]" (click)="itemClick(row[links[field]], row[field])">{{row[field] || '- - -'}}</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

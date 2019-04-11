@@ -1,0 +1,25 @@
+<div *ngIf="loading" style="position: absolute" class="progress">
+  <div class="indeterminate"></div>
+</div>
+<app-main-layout title="Software Instalados"></app-main-layout>
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card darken-1">
+      <div class="card-content">
+        <span class="card-title">Instalados</span>
+        <app-data-table [fields]="fields"
+                        (itemClicked)="loadDeviceModal($event)"
+                        [titles]="titles"
+                        [links]="links"
+                        [rows]="rows"></app-data-table>
+      </div>
+    </div>
+  </div>
+</div>
+<app-basic-modal [title]="deviceModal.title"
+                 [size]="deviceModal.size"
+                 [fields]="deviceModal.fields"
+                 [titles]="deviceModal.titles"
+                 [data]="deviceModal.data"
+                 [identifier]="deviceModal.identifier"></app-basic-modal>
+<app-footer></app-footer>

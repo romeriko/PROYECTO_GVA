@@ -1,0 +1,47 @@
+<ngx-smart-modal customClass="modal-{{size}}" identifier="{{identifier}}">
+  <div class="modal-content no-padding">
+    <ul class="collection no-margin">
+      <li class="collection-item">
+        <h5>Remover dispositivo</h5>
+      </li>
+    </ul>
+    <form id="deviceUpdateForm" name="deviceUpdateForm" class="col s12" [formGroup]="removeDeviceForm">
+      <div class="row">
+        <div class="col s6">
+          <label for="type" [ngClass]="{'active': active}">Dispositivo a remover</label>
+          <select id="type" class="validate browser-default" formControlName="device">
+            <option [ngValue]="device.id" *ngFor="let device of devices">
+              {{device.name}} -  {{device.id}}
+            </option>
+          </select>
+        </div>
+        <div class="input-field col s4">
+          <input id="name" formControlName="password" type="password" class="validate">
+          <label [ngClass]="{'active': active}" for="name">Confirme Contraseña de Usuario</label>
+        </div>
+      </div>
+    </form>
+    <ul class="collection no-margin">
+      <li class="collection-item">
+        <button [disabled]="removeDeviceForm.invalid"
+                (click)="submit()"
+                type="submit" form="deviceUpdateForm" class="waves-effect waves-light green darken-2 btn margin-left">
+          <div *ngIf="loading" class="preloader-wrapper button-icon active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+          Remover Dispositivo
+        </button>
+      </li>
+    </ul>
+  </div>
+</ngx-smart-modal>

@@ -1,0 +1,8 @@
+<ngx-smart-modal customClass="modal-{{size}}" identifier="{{identifier}}">
+  <div class="modal-content">
+    <h4>{{title}}</h4>
+    <app-data-table [fields]="fields"
+                    [titles]="titles"
+                    [rows]="data"></app-data-table>
+  </div>
+</ngx-smart-modal>

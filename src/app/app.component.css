@@ -1,0 +1,21 @@
+.nav-wrapper {
+  padding-left: 6em;
+  padding-right: 6em;
+}
+
+.page-title {
+  font-size: 17px;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: .11em;
+  line-height: 1em;
+  text-rendering: optimizeLegibility;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.center-80 {
+  margin-left: 10%;
+  width: 80%;
+}

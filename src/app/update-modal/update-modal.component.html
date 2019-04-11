@@ -1,0 +1,54 @@
+<ngx-smart-modal customClass="modal-{{size}}" identifier="{{identifier}}">
+  <div class="modal-content no-padding">
+    <ul class="collection no-margin">
+      <li class="collection-item">
+        <h5>{{title}} : {{device}}</h5>
+      </li>
+    </ul>
+    <form id="deviceUpdateForm" name="deviceUpdateForm" class="col s12" [formGroup]="deviceUpdateForm">
+      <div class="row">
+        <div class="col s6">
+          <label for="type" [ngClass]="{'active': active}">Version De Actualización</label>
+          <select id="type" class="validate browser-default" formControlName="update">
+            <option [ngValue]="update.id" *ngFor="let update of updates">
+              {{update.name + ' - ' + update.version}}
+            </option>
+          </select>
+        </div>
+        <div class="input-field col s4">
+          <input id="name" formControlName="password" type="password" class="validate">
+          <label [ngClass]="{'active': active}" for="name">Confirme Contraseña de Usuario</label>
+        </div>
+      </div>
+    </form>
+    <ul class="collection no-margin">
+      <li class="collection-item">
+        <!--<button [disabled]="deviceUpdateForm.invalid"-->
+        <!--(click)="submit()"-->
+        <!--type="submit" form="deviceUpdateForm" class="waves-effect waves-light green darken-2 btn margin-left">-->
+        <!--<i class="material-icons left">update</i>-->
+        <!--Instalar Versión-->
+        <!--</button>-->
+        <button style="margin-left:65px;"
+                (click)="submit()"
+                type="submit"
+                class="col  s6 btn btn-small white black-text  waves-effect z-depth-1 y-depth-1">
+          <div *ngIf="loading" class="preloader-wrapper button-icon active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+          Instalar Version
+        </button>
+      </li>
+    </ul>
+  </div>
+</ngx-smart-modal>

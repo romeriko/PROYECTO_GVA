@@ -1,0 +1,44 @@
+<div *ngIf="loading" style="position: absolute" class="progress">
+  <div class="indeterminate"></div>
+</div>
+<nav class="white">
+  <div class="nav-wrapper">
+    <a *ngIf="app" href="/" class="page-title black-text">{{app.name | uppercase}}</a>
+
+    <a materialize="sideNav" [materializeParams]="sidenavParams" [materializeActions]="sidenavActions"
+       data-activates="nav-mobile" class="button-collapse hide-on-large-only">
+      <i class="material-icons grey-text">menu</i>
+    </a>
+
+    <ul class="right hide-on-med-and-down">
+      <li *ngFor="let menuItem of menuItems" routerLinkActive="active">
+        <a class="black-text" [routerLink]="menuItem.route">{{ menuItem.name | uppercase }}</a>
+      </li>
+      <li>
+        <a class="black-text" (click)="logout($event)">{{ 'Salir' | uppercase }}</a>
+      </li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li>
+        <a><i class="material-icons" (click)="close()">close</i></a>
+      </li>
+      <li *ngFor="let menuItem of menuItems" routerLinkActive="active">
+        <a class="black-text"
+           style="margin-left: 25px"
+           [routerLink]="menuItem.route"
+           (click)="close()">{{ menuItem.name | uppercase}}</a>
+      </li>
+      <div class="divider">
+
+      </div>
+    </ul>
+  </div>
+</nav>
+<nav>
+  <div class="nav-wrapper indigo darken-2">
+    <a style="margin-left: 20px;" class="breadcrumb">{{session.user.name}}</a>
+    <a class="breadcrumb">{{title}}</a>
+    <div style="margin-right: 20px;" id="timestamp" class="right"></div>
+  </div>
+</nav>

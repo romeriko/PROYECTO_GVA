@@ -1,0 +1,105 @@
+<div *ngIf="loading" style="position: absolute" class="progress">
+  <div class="indeterminate"></div>
+</div>
+
+<app-main-layout [title]="title"></app-main-layout>
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card darken-1">
+      <div class="card-content">
+        <span class="card-title">Informacion del dispositivo</span>
+        <div class="row">
+          <form class="col s12" id="deviceForm" (submit)="saveChanges()" [formGroup]="deviceForm">
+            <div class="row">
+              <div class="input-field col s4">
+                <input formControlName="id" id="id" type="text" class="validate">
+                <label [ngClass]="{'active': active}" for="id">Identificador</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="name" formControlName="name" type="text" class="validate">
+                <label [ngClass]="{'active': active}" for="name">Nombre del Dispositivo</label>
+              </div>
+              <div class="col s4">
+                <label for="type" [ngClass]="{'active': active}">Tipo de Dispositivo</label>
+                <select [attr.disabled]="deviceId !== 'add' ? '' : null" id="type" class="validate browser-default"
+                        formControlName="type">
+                  <option value="LIGHT">LUZ LED</option>
+                  <option value="FAN">ABANICO</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s4">
+                <input id="ip" disabled formControlName="ip" type="text" class="validate">
+                <label [ngClass]="{'active': active}" for="ip">Dirección IP</label>
+              </div>
+              <div class="col s4">
+                <label for="automaticUpdated" [ngClass]="{'active': active}">Actualización Automática</label>
+                <select id="automaticUpdated" class="validate browser-default" formControlName="automaticUpdated">
+                  <option value="true">PERMITIR</option>
+                  <option value="false">BLOQUEAR</option>
+                </select>
+              </div>
+              <div class="col s4">
+                <label for="allowCorrupt" [ngClass]="{'active': active}">Instalar Versiones NO VÁLIDAS</label>
+                <select id="allowCorrupt" class="validate browser-default" formControlName="allowCorrupt">
+                  <option value="true">PERMITIR</option>
+                  <option value="false">BLOQUEAR</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s3">
+                <input disabled formControlName="updated" id="updated" type="date" class="validate">
+                <label [ngClass]="{'active': true}" for="updated">Última Actualización</label>
+              </div>
+              <div class="input-field col s3">
+                <input disabled formControlName="version" id="version" type="text" class="validate">
+                <label [ngClass]="{'active': true}" for="version">Versión Actualización</label>
+              </div>
+              <div class="input-field col s3">
+                <input disabled formControlName="connection" id="lastConnection" type="date" class="validate">
+                <label [ngClass]="{'active': true}" for="lastConnection">Última Conexión</label>
+              </div>
+              <div class="input-field col s3">
+                <input disabled id="status" formControlName="status" type="text" class="validate">
+                <label [ngClass]="{'active': active}" for="status">Estatus</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card-action">
+        <div class="row">
+          <div class="col s4 center">
+            <a (click)="openModal()" class="waves-effect waves-light green darken-2 btn margin-left">
+              <i class="material-icons left">update</i>
+              Instalar Versión
+            </a>
+          </div>
+          <div class="col s4 center">
+            <a class="switch waves-effect center waves-light red darken-2 btn margin-left">
+              <label class="white-text">
+                Off
+                <input id="deviceWorking" type="checkbox" ngModel="deviceWorking">
+                <span class="lever" id="ckb" (click)="changeWork($event)"></span>
+                On
+              </label>
+            </a>
+          </div>
+          <div class="col s4 center">
+            <button type="submit"
+                    form="deviceForm"
+                    [disabled]="deviceForm.invalid"
+                    class="waves-effect waves-light blue darken-2 btn margin-left">
+              <i class="material-icons left">save</i>
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-update-modal *ngIf="device" [type]="device.type" [device]="device.id"></app-update-modal>
+<app-footer></app-footer>
